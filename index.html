@@ -16,14 +16,16 @@
   <p>This is some text.</p> 
 </div>
   <script>
-    $.ajax({
-      method: "POST",
-      url: "https://ajax-api.000webhostapp.com",
-      data: {x : "test ajax"},
-        success: function(data){
-          alert(data);
-        }
-    });
+    function test(){
+      $.ajax({
+        method: "POST",
+        url: "https://ajax-api.000webhostapp.com",
+        data: {x : "test ajax"},
+          success: function(data){
+            alert(data);
+          }
+      });
+    }
   </script>
 </body>
 </html>
