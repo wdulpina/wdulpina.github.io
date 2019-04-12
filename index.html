@@ -15,6 +15,15 @@
   <h1>My First Bootstrap Page</h1>
   <p>This is some text.</p> 
 </div>
-
+  <script>
+    $.ajax.(function(){
+      method: "POST",
+      url: "https://ajax-api.000webhostapp.com",
+      data: {x : "test ajax"},
+        success: function(data){
+          alert(data);
+        }
+    });
+  </script>
 </body>
 </html>
