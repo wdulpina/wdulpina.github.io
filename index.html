@@ -20,6 +20,7 @@
       $.ajax({
         method: "POST",
         url: "https://ajax-api.000webhostapp.com",
+        headers: { 'Access-Control-Allow-Origin': '*' },
         data: {x : "test ajax"},
           success: function(data){
             alert(data);
