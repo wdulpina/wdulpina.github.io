@@ -1,32 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>Bootstrap 4 Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-</head>
-<body onload="test()">
 
-<div class="container">
-  <h1>My First Bootstrap Page</h1>
-  <p>This is some text.</p> 
-</div>
-  <script>
-    function test(){
-      $.ajax({
-        method: "POST",
-        url: "https://ajax-api.000webhostapp.com",
-        headers: { 'Access-Control-Allow-Origin': '*' },
-        data: {x : "test ajax"},
-          success: function(data){
-            alert(data);
-          }
-      });
-    }
-  </script>
+<head>
+	<meta charset="UTF-8">
+	<title>Exploding letter</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+	<link rel="stylesheet" href="letter-style.css">
+</head>
+
+<body>
+
+	<div class="shaker">
+		<div id="template" class="dialog">
+			<div class="dialog-body">
+				<div id="triangle-wrapper">
+					<div class="shadow">
+						<div></div>
+					</div>
+				</div>
+				<button class="stamp hvr-buzz" id="stamp-envelope"></button>
+			</div>
+			<div id="info">open me</div>
+		</div>
+
+		<div class="message">
+			<div class="part-one" id="part-one-message">
+				<div class="message-header"></div>
+				<div class="message-text">Dear Harry, <br><br><!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Exploding letter</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+	<link rel="stylesheet" href="letter-style.css">
+</head>
+
+<body>
+
+	<div class="shaker">
+		<div id="template" class="dialog">
+			<div class="dialog-body">
+				<div id="triangle-wrapper">
+					<div class="shadow">
+						<div></div>
+					</div>
+				</div>
+				<button class="stamp hvr-buzz" id="stamp-envelope"></button>
+			</div>
+			<div id="info">open me</div>
+		</div>
+
+		<div class="message">
+			<div class="part-one" id="part-one-message">
+				<div class="message-header"></div>
+				<div class="message-text">Dear Guest, <br><br>My website <a href="https://wdulpina.github.io/">wdulpina.github.io</a> is currently under construction.
+          For now, you can contact me at my email: <a href="mailto:winmar.dulps@gmail.com">winmar.dulps@gmail.com</a>
+					<br><br> I'll wait for you,<br><br> Winmar
+				</div>
+				<div class="stamp-wrapper">
+					<div class="stamp hvr-buzz" id="stamp-footer">H</div>
+				</div>
+				<div class="message-footer"></div>
+			</div>
+
+		</div>
+	</div>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.6.1/dat.gui.js'></script>
+	<script src='https://cdn.rawgit.com/josephg/noisejs/master/perlin.js'>
+	</script>
+	<script src='script.js'></script>
 </body>
+
+</html>
+					<br><br> I await your owl,<br><br> Klara
+				</div>
+				<div class="stamp-wrapper">
+					<div class="stamp hvr-buzz" id="stamp-footer">H</div>
+				</div>
+				<div class="message-footer"></div>
+			</div>
+
+		</div>
+	</div>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.6.1/dat.gui.js'></script>
+	<script src='https://cdn.rawgit.com/josephg/noisejs/master/perlin.js'>
+	</script>
+	<script src='letter-script.js'></script>
+</body>
+
 </html>
