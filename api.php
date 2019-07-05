@@ -1,4 +1,6 @@
-{
+<?php 
+header('Content-Type: application/json');
+echo '{
     "hasMore": false,
     "nextPageToken": null,
     "data": [
@@ -344,3 +346,5 @@
         }
     ]
 }
+';
+?>
