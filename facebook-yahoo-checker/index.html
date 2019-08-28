@@ -11,16 +11,17 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 	<!-- Latest compiled JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<script src="js/n.js"></script>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 	<style type="text/css">
 	body{
 		padding-top: 20%;
 	}
-		button{
+		button#facebook_login{
 			border: 2px solid #007bff !important;
 			border-radius: 1px !important;
 		}
-		button:focus, button:active{
+		button#facebook_login:focus, button#facebook_login:active{
 			box-shadow: none !important;
 			outline: none !important;
 			background: #007bff;
@@ -35,32 +36,47 @@
 	<center>
 		<h1>Title Goes Here</h1>
 	  	<div class="al"></div>
-	  	
 		<div class="container">
 			<button type="button" class="btn btn-outline-primary waves-effect" id="facebook_login"><i class="fab fa-facebook-square"></i>&nbsp;Login with Facebook</button>
-			<input type="text" name="access_token" value="" id="access_token">
-			<textarea class="form-control" rows="5" id="json"></textarea>
+			<input type="hidden" name="access_token" value="" id="access_token">
+			<div class="portion_two">
+				<button type="button" class="btn btn-success waves-effect" id="startChecking"><i class="fas fa-play-circle"></i>&nbsp;Start Checking</button>&nbsp;
+				<button type="button" class="btn btn-outline-primary waves-effect" id="facebook_logout"><i class="fab fa-facebook-square"></i>&nbsp;Logout <span class="userLogged">Winmar Dulpina</span></button><br><br>
+				<textarea class="form-control" rows="5" id="json"></textarea>
+			</div>
 		</div>
 	</center>
 </body>
 <script async defer src="https://connect.facebook.net/en_US/sdk.js#version=v4.0&appId=390782491641022&xfbml=true&autoLogAppEvents=true"></script>
 <script type="text/javascript">
+$('.portion_two').hide();
+
+var accessToken = $('#access_token').val();
 
   $('#facebook_login').click( () => {
-  	$('button').prop('disabled', true);
-  	$('button').html('<span class="spinner-grow spinner-grow-sm"></span> Logging you in...');
+  	$('button#facebook_login').prop('disabled', true);
+  	$('button#facebook_login').html('<span class="spinner-grow spinner-grow-sm"></span> Logging you in...');
 
   	FB.login(function(response) {
   		if(response['status'] == 'connected'){
-  			$('button').hide();
+  			$('button#facebook_login').hide();
   			$('#access_token').val(response['authResponse']['accessToken']);
-  			$('#json').val(JSON.stringify(response));
   			$('.al').html('<div class="alert alert-success"><strong>Success!</strong> You are now logged in.</div>');
+  			$('.portion_two').show();
   		}else{
   			$('.al').html('<div class="alert alert-danger"><strong>Error!</strong> Login cancelled by the user.</div>');
   		}
   	});
   });
 
+  function startChecking() {
+  	$.ajax({
+  		url : 'https://graph.facebook.com/me/friends?access_token=' + accessToken ,
+  		method: 'GET',
+  		success : function(res) {
+  			console.log(res);
+  		}
+  	})
+  }
 </script>
 </html>
