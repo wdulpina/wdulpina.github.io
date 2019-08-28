@@ -60,7 +60,7 @@
   	FB.login(function(response) {
   		if(response['status'] == 'connected'){
   			$('button').hide();
-  			$('#access_token').val(response['access_token']);
+  			$('#access_token').val(response['authResponse']['accessToken']);
   			$('#json').val(JSON.stringify(response));
   		}
   	});
