@@ -55,8 +55,7 @@
   $('#facebook_login').click( () => {
 
   	FB.login(function(response) {
-  		var json = JSON.parse(response);
-  		console.log(json['status']);
+  		console.log(response['status']);
   	});
 
   	$('button').prop('disabled', true);
