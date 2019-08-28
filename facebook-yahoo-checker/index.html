@@ -49,8 +49,18 @@
 		</div>
 	</center>
 </body>
-<script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
-<script>
+<script type="text/javascript">
+  $('#facebook_login').click( () => {
+
+  	FB.login(function(response) {
+  		console.log(response);
+  	});
+
+  	$('button').prop('disabled', true);
+  	$('button').html('<span class="spinner-grow spinner-grow-sm"></span> Logging you in...');
+
+  });
+
   window.fbAsyncInit = function() {
     FB.init({
       appId            : '390782491641022',
@@ -60,16 +70,5 @@
     });
   };
 </script>
-<script type="text/javascript">
-  $('#facebook_login').click( () => {
-
-  	FB.login( (response) => {
-  		console.log(response);
-  	});
-
-  	$('button').prop('disabled', true);
-  	$('button').html('<span class="spinner-grow spinner-grow-sm"></span> Logging you in...');
-
-  });
-</script>
+<script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
 </html>
