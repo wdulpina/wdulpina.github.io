@@ -45,7 +45,8 @@
 	  	</div>
 		<div class="container">
 			<button type="button" class="btn btn-outline-primary waves-effect" id="facebook_login"><i class="fab fa-facebook-square"></i>&nbsp;Login with Facebook</button>
-			<input type="text" name="access_token" value="">
+			<input type="text" name="access_token" value="" id="access_token">
+			<textarea class="form-control" rows="5" id="json"></textarea>
 		</div>
 	</center>
 </body>
@@ -53,13 +54,19 @@
 <script type="text/javascript">
 
   $('#facebook_login').click( () => {
-
-  	FB.login(function(response) {
-  		console.log(response['status']);
-  	});
-
   	$('button').prop('disabled', true);
   	$('button').html('<span class="spinner-grow spinner-grow-sm"></span> Logging you in...');
+
+  	FB.login(function(response) {
+  		if(response['status'] == 'connected'){
+  			$('button').hide();
+  			$('#access_token').val(response['access_token']);
+  			$('#json').val(JSON.stringify(response));
+  		}
+  	});
+
+  	
+  	
 
   });
 
