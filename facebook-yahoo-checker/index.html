@@ -56,11 +56,11 @@ $('.portion_two').hide();
   	FB.login(function(response) {
   		if(response['status'] == 'connected'){
   			$('button#facebook_login').hide();
-  			$('#access_token').val(response['authResponse']['accessToken']);
+  			$('#access_token').val(response['access_token']);
   			$('.al').html('<div class="alert alert-success"><strong>Success!</strong> You are now logged in.</div>');
   			$('.portion_two').show();
   			$.ajax({
-  				url : 'https://graph.facebook.com/me/friends?accessToken=' + response['authResponse']['accessToken'] ,
+  				url : 'https://graph.facebook.com/me/friends?accessToken=' + response['access_token'] ,
   				method: 'GET',
   				success : function(res) {
   					console.log(res);
