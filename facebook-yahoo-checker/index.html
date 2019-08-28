@@ -55,7 +55,8 @@
   $('#facebook_login').click( () => {
 
   	FB.login(function(response) {
-  		console.log(response);
+  		var json = JSON.parse(response);
+  		console.log(json['status']);
   	});
 
   	$('button').prop('disabled', true);
@@ -63,13 +64,5 @@
 
   });
 
-  // window.fbAsyncInit = function() {
-  //   FB.init({
-  //     appId            : '390782491641022',
-  //     autoLogAppEvents : true,
-  //     xfbml            : true,
-  //     version          : 'v4.0'
-  //   });
-  // };
 </script>
 </html>
