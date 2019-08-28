@@ -34,15 +34,8 @@
 <body>
 	<center>
 		<h1>Title Goes Here</h1>
-	  	<div class="alert alert-success">
-	    	<strong>Success!</strong> You are now logged in successfully. Please wait.
-	  	</div>
-	  	<div class="alert alert-warning">
-	    	<strong>Error!</strong> Please allow the app in order to use this application.
-	  	</div>
-	  	<div class="alert alert-danger">
-	    	<strong>Error!</strong> Login cancelled by the user.
-	  	</div>
+	  	<div class="al"></div>
+	  	
 		<div class="container">
 			<button type="button" class="btn btn-outline-primary waves-effect" id="facebook_login"><i class="fab fa-facebook-square"></i>&nbsp;Login with Facebook</button>
 			<input type="text" name="access_token" value="" id="access_token">
@@ -62,12 +55,11 @@
   			$('button').hide();
   			$('#access_token').val(response['authResponse']['accessToken']);
   			$('#json').val(JSON.stringify(response));
+  			$('.al').html('<div class="alert alert-success"><strong>Success!</strong> You are now logged in successfully. Please wait.</div>');
+  		}else{
+  			$('.al').html('<div class="alert alert-danger"><strong>Error!</strong> Login cancelled by the user.</div>');
   		}
   	});
-
-  	
-  	
-
   });
 
 </script>
