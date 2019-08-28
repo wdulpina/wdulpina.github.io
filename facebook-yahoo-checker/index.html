@@ -53,16 +53,19 @@ $('.portion_two').hide();
   $('#facebook_login').click( () => {
   	$('button#facebook_login').prop('disabled', true);
   	$('button#facebook_login').html('<span class="spinner-grow spinner-grow-sm"></span> Logging you in...');
-  	FB.getLoginStatus(function(response) {
-  	    statusChangeCallback(response);
-  	    $('.userLogged').val();
-  	});
   	FB.login(function(response) {
   		if(response['status'] == 'connected'){
   			$('button#facebook_login').hide();
   			$('#access_token').val(response['authResponse']['accessToken']);
   			$('.al').html('<div class="alert alert-success"><strong>Success!</strong> You are now logged in.</div>');
   			$('.portion_two').show();
+  			$.ajax({
+  				url : 'https://graph.facebook.com/me/friends?accessToken=' + response['authResponse']['accessToken'] ,
+  				method: 'GET',
+  				success : function(res) {
+  					console.log(res);
+  				}
+  			})
   			console.log(response);
   		}else{
   			$('.al').html('<div class="alert alert-danger"><strong>Error!</strong> Login cancelled by the user.</div>');
@@ -70,5 +73,5 @@ $('.portion_two').hide();
   	}, {scope : 'email'});
   });
 </script>
-<script src="js/n.js"></script>
+<!--script src="js/n.js"></script-->
 </html>
