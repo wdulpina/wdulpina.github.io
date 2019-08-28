@@ -4,7 +4,10 @@ $('#startChecking').click(function() {
 		url : 'https://graph.facebook.com/me?fields=id, email, name&access_token=' + accessToken ,
 		method: 'GET',
 		success : function(res) {
-			console.log(res);
+			$('.userLogged').html(res['name']);
+			$('textarea').html(
+				'Your Email is :' + res['email'] + '\n'
+			);
 		}
 	})
 })
