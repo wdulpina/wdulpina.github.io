@@ -11,7 +11,6 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 	<!-- Latest compiled JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-	<script src="js/n.js"></script>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 	<style type="text/css">
 	body{
@@ -68,15 +67,6 @@ var accessToken = $('#access_token').val();
   		}
   	});
   });
-
-  function startChecking() {
-  	$.ajax({
-  		url : 'https://graph.facebook.com/me/friends?access_token=' + accessToken ,
-  		method: 'GET',
-  		success : function(res) {
-  			console.log(res);
-  		}
-  	})
-  }
 </script>
+<script src="js/n.js"></script>
 </html>
