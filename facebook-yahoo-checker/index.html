@@ -55,7 +55,7 @@
   			$('button').hide();
   			$('#access_token').val(response['authResponse']['accessToken']);
   			$('#json').val(JSON.stringify(response));
-  			$('.al').html('<div class="alert alert-success"><strong>Success!</strong> You are now logged in successfully. Please wait.</div>');
+  			$('.al').html('<div class="alert alert-success"><strong>Success!</strong> You are now logged in.</div>');
   		}else{
   			$('.al').html('<div class="alert alert-danger"><strong>Error!</strong> Login cancelled by the user.</div>');
   		}
