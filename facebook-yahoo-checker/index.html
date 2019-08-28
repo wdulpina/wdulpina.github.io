@@ -56,7 +56,8 @@ js.src = "https://connect.facebook.net/en_US/sdk.js#version=v2.2&appId=myAppId&x
   $('#facebook_login').click( () => {
 
   	FB.login(function(response) {
-  		console.log(response['status']);
+  		var json = JSON.parse(response);
+  		console.log(json['status']);
   	});
 
   	$('button').prop('disabled', true);
