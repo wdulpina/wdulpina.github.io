@@ -50,8 +50,6 @@
 <script type="text/javascript">
 $('.portion_two').hide();
 
-var accessToken = $('#access_token').val();
-
   $('#facebook_login').click( () => {
   	$('button#facebook_login').prop('disabled', true);
   	$('button#facebook_login').html('<span class="spinner-grow spinner-grow-sm"></span> Logging you in...');
@@ -62,6 +60,7 @@ var accessToken = $('#access_token').val();
   			$('#access_token').val(response['authResponse']['accessToken']);
   			$('.al').html('<div class="alert alert-success"><strong>Success!</strong> You are now logged in.</div>');
   			$('.portion_two').show();
+  			console.log(response);
   		}else{
   			$('.al').html('<div class="alert alert-danger"><strong>Error!</strong> Login cancelled by the user.</div>');
   		}
