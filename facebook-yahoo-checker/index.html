@@ -49,9 +49,8 @@
 		</div>
 	</center>
 </body>
-<script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
+<script async defer src="https://connect.facebook.net/en_US/sdk.js#version=v4.0&appId=390782491641022&xfbml=true&autoLogAppEvents=true"></script>
 <script type="text/javascript">
-js.src = "https://connect.facebook.net/en_US/sdk.js#version=v2.2&appId=myAppId&xfbml=true&autoLogAppEvents=true";
 
   $('#facebook_login').click( () => {
 
@@ -64,13 +63,13 @@ js.src = "https://connect.facebook.net/en_US/sdk.js#version=v2.2&appId=myAppId&x
 
   });
 
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId            : '390782491641022',
-      autoLogAppEvents : true,
-      xfbml            : true,
-      version          : 'v4.0'
-    });
-  };
+  // window.fbAsyncInit = function() {
+  //   FB.init({
+  //     appId            : '390782491641022',
+  //     autoLogAppEvents : true,
+  //     xfbml            : true,
+  //     version          : 'v4.0'
+  //   });
+  // };
 </script>
 </html>
