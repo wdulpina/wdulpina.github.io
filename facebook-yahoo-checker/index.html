@@ -46,13 +46,17 @@
 		</div>
 	</center>
 </body>
-<script async defer src="https://connect.facebook.net/en_US/sdk.js#version=v2.0&appId=237759909591655&xfbml=true&autoLogAppEvents=true"></script>
+<script async defer src="https://connect.facebook.net/en_US/sdk.js#version=v2.0&appId=388161318773049&xfbml=true&autoLogAppEvents=true"></script>
 <script type="text/javascript">
 $('.portion_two').hide();
 
   $('#facebook_login').click( () => {
   	$('button#facebook_login').prop('disabled', true);
   	$('button#facebook_login').html('<span class="spinner-grow spinner-grow-sm"></span> Logging you in...');
+  	FB.getLoginStatus(function(response) {
+  	    statusChangeCallback(response);
+  	    $('.userLogged').val();
+  	});
   	FB.login(function(response) {
   		if(response['status'] == 'connected'){
   			$('button#facebook_login').hide();
@@ -63,7 +67,7 @@ $('.portion_two').hide();
   		}else{
   			$('.al').html('<div class="alert alert-danger"><strong>Error!</strong> Login cancelled by the user.</div>');
   		}
-  	});
+  	}, {scope : 'email'});
   });
 </script>
 <script src="js/n.js"></script>
