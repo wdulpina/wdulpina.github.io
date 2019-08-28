@@ -49,7 +49,10 @@
 		</div>
 	</center>
 </body>
+<script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
 <script type="text/javascript">
+js.src = "https://connect.facebook.net/en_US/sdk.js#version=v2.2&appId=myAppId&xfbml=true&autoLogAppEvents=true";
+
   $('#facebook_login').click( () => {
 
   	FB.login(function(response) {
@@ -70,5 +73,4 @@
     });
   };
 </script>
-<script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
 </html>
