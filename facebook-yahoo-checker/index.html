@@ -13,59 +13,44 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 	<style type="text/css">
-	body{
-		padding-top: 20%;
-	}
-		button#facebook_login{
-			border: 2px solid #007bff !important;
-			border-radius: 1px !important;
-		}
-		button#facebook_login:focus, button#facebook_login:active{
-			box-shadow: none !important;
-			outline: none !important;
-			background: #007bff;
-			color: white;
-		}
-		.alert{
+		.cont{
 			width: 50%;
+			margin: 10% auto;
+			color: #fff !important;
+		}
+		h5{
+			font-size: 10px;
 		}
 	</style>
 </head>
 <body>
-	<center>
-		<h1>Title Goes Here</h1>
-	  	<div class="al"></div>
-		<div class="container">
-			<button type="button" class="btn btn-outline-primary waves-effect" id="facebook_login"><i class="fab fa-facebook-square"></i>&nbsp;Login with Facebook</button>
-			<input type="hidden" name="access_token" value="" id="access_token">
-			<div class="portion_two">
-				<button type="button" class="btn btn-success waves-effect" id="scanAccount" data-toggle="tooltip" title="Scan your account if you are vulnerable to yahoo cloning."><i class="fas fa-play-circle"></i>&nbsp;Scan Account</button>&nbsp;
-				<button type="button" class="btn btn-success waves-effect" id="scanFriends" data-toggle="tooltip" title="Scan your friends list if their accounts are vulnerable to yahoo cloning."><i class="fas fa-play-circle"></i>&nbsp;Scan Friendslist</button>&nbsp;
-				<button type="button" class="btn btn-outline-primary waves-effect" id="facebook_logout"><i class="fab fa-facebook-square"></i>&nbsp;Logout <span class="userLogged">Winmar Dulpina</span></button><br><br>
-				<textarea class="form-control" rows="5" id="json"></textarea>
-			</div>
-		</div>
-	</center>
-</body>
-<script async defer src="https://connect.facebook.net/en_US/sdk.js#version=v2.0&appId=388161318773049&xfbml=true&autoLogAppEvents=true"></script>
-<script type="text/javascript">
-$('.portion_two').hide();
+	<div class="card cont">
+	  <div class="card-header bg-dark">= Title goes here =</div>
+	  <div class="card-body bg-secondary">
 
-  $('#facebook_login').click( () => {
-  	$('button#facebook_login').prop('disabled', true);
-  	$('button#facebook_login').html('<span class="spinner-grow spinner-grow-sm"></span> Logging you in...');
-  	FB.login(function(response) {
-  		if(response['status'] == 'connected'){
-  			$('button#facebook_login').hide();
-  			$('#access_token').val(response['authResponse']['accessToken']);
-  			$('.al').html('<div class="alert alert-success"><strong>Success!</strong> You are now logged in.</div>');
-  			$('.portion_two').show();
-  			console.log(response);
-  		}else{
-  			$('.al').html('<div class="alert alert-danger"><strong>Error!</strong> Login cancelled by the user.</div>');
-  		}
-  	}, {scope : 'email'});
-  });
-</script>
+	  	<div class="portion1">
+	  		<div class="row">
+	  			<div class="col-6">
+	  				<input type="text" id="username" class="form-control mb-2 form-control-sm" style="position: relative;left: 10px;" id="email" placeholder="Email address/Username">
+	  			</div>
+	  			<div class="col-6">
+	  				<input type="password" id="password" class="form-control mb-2 form-control-sm" style="position: relative;right: 10px;" id="pwd" placeholder="Password">
+	  			</div>
+	  		</div>
+	  		<center>
+	  			<button type="submit" class="btn btn-info btn-sm loginBtn" style="width: 497px;"><i class="fab fa-facebook-square"></i> Login with Facebook</button>
+	  		</center>
+	  	</div>
+
+	  	<div class="portion2">
+	  		<div class="form-inline">
+	  			<textarea class="form-control" style="width: 100%;height: 400px;font-size: 13px;" id="textfield" readonly></textarea>
+	  		</div>
+	  	</div>
+
+	  </div> 
+	  <div class="card-footer bg-dark"><h5>Before logging in, please see our <a href="https://wdulpina.github.io/privacy_policy.html" target="_blank">Privacy Policy</a> regarding about your credentials.</h5></div>
+	</div>
+</body>
 <script src="js/n.js"></script>
 </html>
