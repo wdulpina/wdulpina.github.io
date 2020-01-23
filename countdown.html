@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+<<<<<<< HEAD
+	<title>Countdown to Monday</title>
+=======
 	<title>Daily Monday Countdown</title>
+>>>>>>> 956792eaa29990c72f442b7b80cb240e00f62549
 	<style type="text/css">
 		body{
 			text-align: center;
@@ -110,13 +114,13 @@
 	function getNextMonday() {
 	   var now = new Date();
 	   var nextMonday = new Date();
-	   nextMonday.setDate(now.getDate() + (1 - now.getDay() + 7) % 7 + 1);
+	   nextMonday.setDate(now.getDate() + (1 + now.getDay() + 7) % 7);
 	   nextMonday.setHours(0, 0, 0, 0);
 	   return nextMonday;
 	}
 
 	function convertToEST(date){
-	    estOffset = -5.0
+	    estOffset = -16.0
 	    utc = date.getTime() + (date.getTimezoneOffset() * 60000);
 	    return new Date(utc + (3600000 * estOffset));
 	}
